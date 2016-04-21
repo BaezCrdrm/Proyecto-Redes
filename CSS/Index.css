@@ -41,30 +41,64 @@
     margin-bottom: 30px;
 }
 
-#miniCat {
-    width: 80%;
+#p_miniCat {
+    width: 100%;
     height: auto;
+    min-height: 100px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+    background-color: gray;
 }
 
-#divIzquierda {
-    width: 69%;
-    height: auto;
+#miniCat {
+    width: 80%;
+    max-width: 1093px;
+}
+
+#miniCat img:hover {
+    opacity: 0.8;
+}
+
+#imgMini1 {
+    width: 69.1%;
     float: left;
 }
 
-#divIzquierda img {
+#imgDer {
+    width: 30.5%;
+    float: right;
+}
+
+#imgDer img{
     width: 100%;
 }
 
-#divDerecha {
-    width: 30.8%;
-    float: right;
+#imgBottom {
+    clear: both;
 }
 
-/*footer h1 {
-    float: left
+#hola {
+    width: 100%;
+    height: 10px;
+    
+    clear: both;
+}
+
+footer {
+    height: 100px;
+}
+
+footer h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    float: left;
 }
 
 footer h3 {
+    margin-right: 30px;
+    margin-top:70px;
     float: right;
-}*/
+    
+    font-weight: normal;
+}
