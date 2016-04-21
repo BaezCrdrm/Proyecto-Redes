@@ -1,3 +1,12 @@
+#principal {
+    padding-bottom: 30px;
+}
+
+.presenta, #miniCat {
+    margin-left: auto;
+    margin-right: auto;   
+}
+
 #portada {
     width: 100%;
     height: auto;
@@ -20,3 +29,42 @@
 #menu {
     float: right;
 }
+
+.presenta {
+    width: 60%;
+    font-style: italic;
+    text-align: center;
+}
+
+.presenta > * {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#miniCat {
+    width: 80%;
+    height: auto;
+}
+
+#divIzquierda {
+    width: 69%;
+    height: auto;
+    float: left;
+}
+
+#divIzquierda img {
+    width: 100%;
+}
+
+#divDerecha {
+    width: 30.8%;
+    float: right;
+}
+
+/*footer h1 {
+    float: left
+}
+
+footer h3 {
+    float: right;
+}*/
