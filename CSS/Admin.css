@@ -1,0 +1,75 @@
+body {
+    width: 100%;
+    min-width: 600px;
+}
+
+header, footer {
+    color:white;
+    background-color: gray;
+}
+
+    #saludo {
+        margin-top:30px;
+        margin-left: 30px;
+        
+        float: left;
+    }
+
+    header a {
+        margin-right: 40px;
+        margin-top: 60px;   
+        
+        float: right;
+    }
+    
+    header a, header a:visited {
+        color:white;
+    }
+
+aside {
+    width: 20%;
+    height: 500px;
+    
+    float: left;
+    
+    background-color: lightgray; 
+}
+
+    aside > * {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    aside h2 {
+        margin-top:10px;
+        text-align: center;
+    }
+
+    aside ul {
+        list-style: none;
+    }
+    
+    aside ul input {
+        width: auto;
+        background-color: lightgray;
+        color: #666;
+        border: none;
+    }
+    
+    aside ul input:hover {
+        opacity: 0.5;
+    }
+
+#content {
+    width: 80%;
+    height: 500px;
+    
+    float: right;
+    background-color: white;
+    
+    overflow: scroll;
+}
+
+footer {
+    height: 50px;
+}
