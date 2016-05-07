@@ -4,8 +4,20 @@
     if (isset($_SESSION['activeSession'])) {
         //$val hace referencia al menú que se mostrará
         $val = $_POST['seleccionAdmin'];
+        $areas = array();
+        $departamentos = array();
+        
+        switch ($val) {
+            case 1:
+                require "../../scripts/consultas.php";
+                muestraUsuarios($areas, $departamentos);
+                break;
+                
+            case 2:
+                # code...
+                break;
+        }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,25 +49,25 @@
         </aside>
         
         <section id="content">
-            <?php 
-                switch ($val) {
-                    case 1:
-                        # code...
-                        break;
-                        
-                    case 2:
-                        # code...
-                        break;
-                }
-            ?>
+               
         </section>
+            <script type="text/javascript" src="../../scripts/interfaz.js"></script>
+            <!--Este script tiene es exclusivo para eventos relacionado con php-->
+            <script type="text/javascript">
+                if(<?php echo $val ?> == 1)
+                {
+                    var areas = <?php echo json_encode($areas); ?>;
+                    var departamentos = <?php echo json_encode($departamentos); ?>;
+                    
+                    generaFormAlta(areas, departamentos);
+                }                
+            </script>
         
         <footer>
             
         </footer>
-        
-        <script type="text/javascript" src="../../scripts/jsUser.js"></script>
     </body>
+    <script type="text/javascript" src="../../scripts/jsUser.js"></script>
 </html>
 
 <?php
