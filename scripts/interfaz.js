@@ -21,7 +21,7 @@ function generaFormAlta(areas, deps)
     var inp = document.createElement("input");
     inp.id = "subDom";
     
-    //
+    //Terminar padre
     var padre = document.createElement("form");
     padre.appendChild(sel1);
     padre.appendChild(sel2);
@@ -30,36 +30,29 @@ function generaFormAlta(areas, deps)
     document.getElementById("content").appendChild(padre);
     area = areas;
     departamento = deps;
-    selArea(sel1.childNodes[0]);
+    document.getElementById("sel1").selectedIndex = -1;
 }
 
 
 //Terminar
-function selArea(option, selDep = false)
+function selArea(option)
 {
     //alert(option.value);
     var deptos = document.getElementById("sel2");
-    
-    if(selDep == false)
+    while(deptos.hasChildNodes())
     {
-        while(deptos.hasChildNodes())
-        {
-            deptos.removeChild(deptos.firstChild);
-        }
-        for (var index = 0; index < departamento.length; index++) {
-            if (option.value == departamento[index][2]) {
-                var opt = document.createElement("option");
-                var txtNode = document.createTextNode(departamento[index][1]);
-                opt.appendChild(txtNode);
-                opt.value = departamento[index][2];
-                
-                deptos.appendChild(opt);
-            }
-        }
+        deptos.removeChild(deptos.firstChild);
     }
-    // else {
-    //     var txtBox = document.getElementById("subDom");
-        
-    //     txtBox.value = areas[document.getElementById("sel1").selectedIndex - 1][2];
-    // }
+    for (var index = 0; index < departamento.length; index++) {
+        if (option.value == departamento[index][2]) {
+            var opt = document.createElement("option");
+            var txtNode = document.createTextNode(departamento[index][1]);
+            opt.appendChild(txtNode);
+            opt.value = departamento[index][2];
+            
+            deptos.appendChild(opt);
+        }
+    }    
+    var txtBox = document.getElementById("subDom");        
+    txtBox.value = areas[document.getElementById("sel1").selectedIndex][2];
 }

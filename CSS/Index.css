@@ -7,8 +7,7 @@ a, a:visited {
     color: white;
 }
 
-header {
-    position: fixed;    
+header {   
     opacity: 0.8;
 }
 
@@ -24,24 +23,6 @@ header {
 #portada {
     width: 100%;
     height: auto;
-}
-
-#logo, #menu {
-    width: 50%;
-    height: 100%;
-}
-
-#logo {
-    float: left;
-}
-
-#logo h1 {
-    margin: 20px 30px;
-    font-size: 50px;
-}
-
-#menu {
-    float: right;
 }
 
 .presenta {
