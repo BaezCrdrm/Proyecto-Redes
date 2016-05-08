@@ -11,18 +11,10 @@ body {
 header {
     width: 100%;    
     height: 100px;
-    
-    position: fixed;    
-    background-color: black;
-    opacity: 0.8;
-    /*border-bottom:1px solid brown;*/
-}
-
-header *{
-    color: white;
 }
 
 footer {
     width: 100%;
     border-top: 1px solid gray;
+    clear: both;
 }
