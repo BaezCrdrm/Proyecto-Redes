@@ -4,12 +4,12 @@
     require "consultas.php";
     
     $passQuery = "SELECT user, password FROM passwords WHERE user='".$usuario."';";
-    $reg=mysqli_fetch_array(genSelect($passQuery), MYSQLI_NUM);
+    $reg=mysqli_fetch_array(genQuery($passQuery), MYSQLI_NUM);
     
     if($usuario == $reg[0] && sha1($pass) == $reg[1])
     {
         $userQuery="SELECT * FROM usuarios WHERE id='".$usuario."';";
-        $user=mysqli_fetch_array(genSelect($userQuery), MYSQLI_NUM);
+        $user=mysqli_fetch_array(genQuery($userQuery), MYSQLI_NUM);
         
         session_start();
         $_SESSION['userName'] = $user[1];

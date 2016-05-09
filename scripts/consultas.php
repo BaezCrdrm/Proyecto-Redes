@@ -1,5 +1,5 @@
 <?php 
-    function genSelect($query/*, $con = null*/)
+    function genQuery($query/*, $con = null*/)
     {
         require "conexion.php";
         
@@ -20,7 +20,7 @@
         //require "conexion.php";
         //carga áreas
         $query = "SELECT * FROM areas;";
-        $consulta = genSelect($query);
+        $consulta = genQuery($query);
         $i = 0;
         while($reg = mysqli_fetch_array($consulta, MYSQLI_NUM))
         {
@@ -34,7 +34,7 @@
         $reg = null;
         $i = 0;
         $query = "SELECT id, nombreDep, areaPert FROM departamentos;"; 
-        $consulta = genSelect($query);
+        $consulta = genQuery($query);
         while($reg = mysqli_fetch_array($consulta, MYSQLI_NUM))
         {
             //$output[]=array_map('utf8_encode', $row);
