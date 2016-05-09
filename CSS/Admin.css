@@ -70,6 +70,40 @@ aside {
     overflow: scroll;
 }
 
+    /*Registro usuario*/
+    #tituloFormReg {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    #formAlta {
+        width: 350px;
+        margin: auto;
+    }
+    
+        #formAlta h3 {
+            margin-top: 8px;
+            margin-bottom: 3px;
+        }
+    
+        #area li{
+            width: 150px;
+            display: inline-block;
+        }
+            #area li select {
+                width: 100%;
+            }
+            
+        #mail li {
+            display: inline;
+        }
+
+        .inpDatosB {
+            width: 170px;
+            margin-top: 3px;
+        }
+
 footer {
     height: 50px;
 }

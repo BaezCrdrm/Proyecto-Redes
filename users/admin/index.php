@@ -49,19 +49,20 @@
         </aside>
         
         <section id="content">
-               
+            <?php
+               if ($val==1) {
+                   include("../../plantillas/registroUsuario.html");
+                   
+                   echo "<script type='text/javascript' src='../../scripts/interfaz.js'></script>
+                <script type='text/javascript'>
+                        var areas = ".json_encode($areas).";
+                        var departamentos = ".json_encode($departamentos).";
+                        
+                        generaFormAlta(areas, departamentos);     
+                </script>";
+               }
+            ?>
         </section>
-            <script type="text/javascript" src="../../scripts/interfaz.js"></script>
-            <!--Este script tiene es exclusivo para eventos relacionado con php-->
-            <script type="text/javascript">
-                if(<?php echo $val ?> == 1)
-                {
-                    var areas = <?php echo json_encode($areas); ?>;
-                    var departamentos = <?php echo json_encode($departamentos); ?>;
-                    
-                    generaFormAlta(areas, departamentos);
-                }                
-            </script>
         
         <footer>
             
