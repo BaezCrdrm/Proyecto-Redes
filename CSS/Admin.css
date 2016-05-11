@@ -71,7 +71,7 @@ aside {
 }
 
     /*Registro usuario*/
-    #tituloFormReg {
+    /*#tituloFormReg {
         margin-top: 30px;
         margin-bottom: 20px;
         text-align: center;
@@ -102,6 +102,34 @@ aside {
         .inpDatosB {
             width: 170px;
             margin-top: 3px;
+        }*/
+        
+    /*Tabla detalles de usuario*/
+    #tituloUsuarios {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    #detalles {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+        #detalles td {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        .btnBorrar {
+            background-color: rgba(173, 0, 0, 1);
+            color: white;
+            border: 2px solid rgba(173, 0, 0, 1);
+        }
+        
+        .btnBorrar, .btnDetalles{
+            padding-left: 4px;
+            padding-right: 4px;
         }
 
 footer {

@@ -10,7 +10,7 @@
         switch ($val) {
             case 1:
                 require "../../scripts/consultas.php";
-                muestraUsuarios($areas, $departamentos);
+                obtieneAreasDep($areas, $departamentos);
                 break;
                 
             case 2:
@@ -26,6 +26,7 @@
         
         <link rel="stylesheet" href="../../CSS/General.css">
         <link rel="stylesheet" href="../../CSS/Admin.css">
+        <link rel="stylesheet" href="../../CSS/FormAlta.css">
     </head>
         
     <body>
@@ -58,8 +59,16 @@
                         var areas = ".json_encode($areas).";
                         var departamentos = ".json_encode($departamentos).";
                         
-                        generaFormAlta(areas, departamentos);     
+                        generaFormAlta(areas, departamentos); 
+                        var form = document.getElementById('formAlta');
+                        form.action = '../../scripts/alta.php';
+                        document.getElementById('divDetalles').style.display = 'none';    
                 </script>";
+               }
+               elseif ($val==2) {
+                   require "../../scripts/consultas.php";
+                   echo "<h1 id='tituloUsuarios'>Usuarios</h1>";
+                   echo muestraUsuarios();
                }
             ?>
         </section>

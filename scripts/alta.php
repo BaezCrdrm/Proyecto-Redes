@@ -7,13 +7,26 @@
     $apellidos = $_POST["apellidos"];
     $fecha = $_POST["fecha"];
     $id = $direccion."@".$subd;
+    $pass = $_POST["password"];
     
     $query = "INSERT INTO usuarios (id, nombre, apellidos, fechaNac) values ('".$id."', '".$nombre."', '".$apellidos."', '".$fecha."'); "; 
- 
+    
+    $myBool = true;
     require "consultas.php";
-    $myBool = genQuery($query);
+    if(!genQuery($query))
+    {
+        $myBool = false;
+    }
     $query = "INSERT INTO trabDeps (idTrab, idArea, idDep) values ('".$id."', '".$area."', '".$departamento."');";
-    $myBool = genQuery($query);
+    if(!genQuery($query) && $myBool == true)
+    {
+        $myBool=false;
+    }
+    $query = "INSERT INTO passwords (user, password) values ('".$id."', '".sha1($pass)."');";
+    if(!genQuery($query) && $myBool == true)
+    {
+        $myBool=false;
+    }
     
     echo "<script type='text/javascript'>";
     if ($myBool == true) {

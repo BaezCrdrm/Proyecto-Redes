@@ -18,7 +18,6 @@ function generaFormAlta(areas, deps)
     document.getElementById("sel1").selectedIndex = -1;
 }
 
-
 //Terminar
 function selArea(option)
 {
@@ -40,4 +39,24 @@ function selArea(option)
     }    
     var txtBox = document.getElementById("subDom");        
     txtBox.value = areas[document.getElementById("sel1").selectedIndex][2];
+}
+
+function preparaFormDetalles(arreglo)
+{
+    var sel = document.getElementById("sel1");
+    for (var i = 0; i < sel.length; i++) {
+        if (sel[i].value==arreglo[1]) {
+            sel.selectedIndex = i;
+        }
+    }
+    //Llamar a selArea(option) del archivo interfaz.js
+    
+    var user = arreglo[0].split("@");
+    document.getElementById("dirCE").value=user[0];
+    document.getElementById("nom").value=arreglo[4];
+    document.getElementById("ape").value=arreglo[5];
+    document.getElementById("date").value=arreglo[6];
+    document.getElementById("detallesTrabajo").value=arreglo[3];
+    
+    selArea(sel.selectedOptions[0]);
 }
