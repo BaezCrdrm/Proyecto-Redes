@@ -10,7 +10,7 @@
         switch ($val) {
             case 1:
                 require "../../scripts/consultas.php";
-                muestraUsuarios($areas, $departamentos);
+                obtieneAreasDep($areas, $departamentos);
                 break;
                 
             case 2:
@@ -26,6 +26,7 @@
         
         <link rel="stylesheet" href="../../CSS/General.css">
         <link rel="stylesheet" href="../../CSS/Admin.css">
+        <link rel="stylesheet" href="../../CSS/FormAlta.css">
     </head>
         
     <body>
@@ -49,19 +50,28 @@
         </aside>
         
         <section id="content">
-               
+            <?php
+               if ($val==1) {
+                   include("../../plantillas/registroUsuario.html");
+                   
+                   echo "<script type='text/javascript' src='../../scripts/interfaz.js'></script>
+                <script type='text/javascript'>
+                        var areas = ".json_encode($areas).";
+                        var departamentos = ".json_encode($departamentos).";
+                        
+                        generaFormAlta(areas, departamentos); 
+                        var form = document.getElementById('formAlta');
+                        form.action = '../../scripts/alta.php';
+                        document.getElementById('divDetalles').style.display = 'none';    
+                </script>";
+               }
+               elseif ($val==2) {
+                   require "../../scripts/consultas.php";
+                   echo "<h1 id='tituloUsuarios'>Usuarios</h1>";
+                   echo muestraUsuarios();
+               }
+            ?>
         </section>
-            <script type="text/javascript" src="../../scripts/interfaz.js"></script>
-            <!--Este script tiene es exclusivo para eventos relacionado con php-->
-            <script type="text/javascript">
-                if(<?php echo $val ?> == 1)
-                {
-                    var areas = <?php echo json_encode($areas); ?>;
-                    var departamentos = <?php echo json_encode($departamentos); ?>;
-                    
-                    generaFormAlta(areas, departamentos);
-                }                
-            </script>
         
         <footer>
             

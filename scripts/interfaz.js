@@ -2,9 +2,7 @@ var area, departamento;
 
 function generaFormAlta(areas, deps)
 {
-    var sel1 = document.createElement("select");
-    sel1.id = "sel1";
-    sel1.setAttribute("onchange", "selArea(this)");
+    var sel1 = document.getElementById("sel1");
     
     for (var index = 0; index < areas.length; index++) {
         var opt = document.createElement("option");
@@ -14,25 +12,11 @@ function generaFormAlta(areas, deps)
         
         sel1.appendChild(opt);   
     }
-    var sel2 = document.createElement("select");
-    sel2.id = "sel2";
     
-    //Cambiar. La caja es temporal
-    var inp = document.createElement("input");
-    inp.id = "subDom";
-    
-    //Terminar padre
-    var padre = document.createElement("form");
-    padre.appendChild(sel1);
-    padre.appendChild(sel2);
-    padre.appendChild(inp);
-    
-    document.getElementById("content").appendChild(padre);
     area = areas;
     departamento = deps;
     document.getElementById("sel1").selectedIndex = -1;
 }
-
 
 //Terminar
 function selArea(option)
@@ -48,11 +32,31 @@ function selArea(option)
             var opt = document.createElement("option");
             var txtNode = document.createTextNode(departamento[index][1]);
             opt.appendChild(txtNode);
-            opt.value = departamento[index][2];
+            opt.value = departamento[index][0];
             
             deptos.appendChild(opt);
         }
     }    
     var txtBox = document.getElementById("subDom");        
     txtBox.value = areas[document.getElementById("sel1").selectedIndex][2];
+}
+
+function preparaFormDetalles(arreglo)
+{
+    var sel = document.getElementById("sel1");
+    for (var i = 0; i < sel.length; i++) {
+        if (sel[i].value==arreglo[1]) {
+            sel.selectedIndex = i;
+        }
+    }
+    //Llamar a selArea(option) del archivo interfaz.js
+    
+    var user = arreglo[0].split("@");
+    document.getElementById("dirCE").value=user[0];
+    document.getElementById("nom").value=arreglo[4];
+    document.getElementById("ape").value=arreglo[5];
+    document.getElementById("date").value=arreglo[6];
+    document.getElementById("detallesTrabajo").value=arreglo[3];
+    
+    selArea(sel.selectedOptions[0]);
 }
