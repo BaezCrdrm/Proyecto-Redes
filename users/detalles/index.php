@@ -1,17 +1,19 @@
 <?php
+    session_start();
     $cuenta = $_POST['cuenta'];
     $accion = $_POST['accion'];
     $pass = $_POST['password'];
     $areas = array();
     $departamentos = array();
     
+    if (isset($_SESSION['activeSession'])) {
     // Agregar función update
-    if ($accion=="Detalles") {
-        require "../../scripts/consultas.php";
-        obtieneAreasDep($areas, $departamentos);
-        
-        $datos = consultaUsuario($cuenta);
-    }
+        if ($accion=="Detalles") {
+            require "../../scripts/consultas.php";
+            obtieneAreasDep($areas, $departamentos);
+            
+            $datos = consultaUsuario($cuenta);
+        }
 ?>
 <html>
     <head>
@@ -60,3 +62,10 @@
         ?>
     </body>
 </html>
+
+<?php
+    }
+    else {
+        header("Location:../../login");
+    }
+?>
