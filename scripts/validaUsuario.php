@@ -20,6 +20,7 @@
             $direccion .= "admin";
         }
         else { //Mortal
+            $_SESSION['id'] = $usuario;
             $_SESSION['userLastName'] = $user[2];
             $_SESSION['userBirthday'] = $user[3];
         }

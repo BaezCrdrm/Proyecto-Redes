@@ -9,7 +9,7 @@ header {
     padding-top: 100px;
     min-height: 450px;
     height: 80%;
-    background-color: orange;
+    background-color: beige;
     
     text-align: center;
 }
@@ -36,7 +36,7 @@ header {
 
 footer {
     height: 100px;
-    background-color: red;
+    background-color: burlywood;
 }
 
 footer h1 {

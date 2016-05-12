@@ -1,0 +1,36 @@
+body {
+    width: 100%;
+    min-width: 600px;
+}
+
+header, footer {
+    color:white;
+    background-color: saddlebrown;
+}
+
+    #saludo {
+        margin-top:30px;
+        margin-left: 30px;
+        float: left;
+    }
+    
+    header div {
+        height: 100px;
+        float: right;
+    }
+    
+    header div * {
+        margin-top: 20px;
+        margin-right: 40px;
+        float: right;
+    }
+    
+    header div a {
+        margin-top: 30px;
+        clear: both;
+    }
+    
+    header a, header a:visited {
+        color:white;
+    }
+
