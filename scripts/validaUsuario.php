@@ -23,6 +23,12 @@
             $_SESSION['id'] = $usuario;
             $_SESSION['userLastName'] = $user[2];
             $_SESSION['userBirthday'] = $user[3];
+            
+            $queryArea = "SELECT idArea, idDep FROM trabDeps WHERE idTrab='".$usuario."'";
+            $userArea = mysqli_fetch_array(genQuery($queryArea), MYSQLI_NUM);
+            
+            $_SESSION['area'] = $userArea[0];
+            $_SESSION['departamento'] = $userArea[1];
         }
         header("Location:../users/".$direccion);     
     }

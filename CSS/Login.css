@@ -1,8 +1,11 @@
 header {
     background-color: black;
-    color: white;
     position: fixed;    
     opacity: 0.8;
+}
+
+header a, header a:visited, header {
+    color: white;
 }
 
 #content {

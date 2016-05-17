@@ -1,11 +1,12 @@
 body {
     width: 100%;
     min-width: 600px;
+    background-color: #eee;
 }
 
 header, footer {
     color:white;
-    background-color: saddlebrown;
+    background-color: #61380B;
 }
 
     #saludo {
@@ -33,4 +34,58 @@ header, footer {
     header a, header a:visited {
         color:white;
     }
+    
+#content, aside {
+    height: 500px;
+}
+    
+#content {
+    width: 80%;
+    float: left;
+    
+    background-color: #eee;
+}
 
+    #formDetallesGenEq {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    #formDetallesGenEq > *{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+        #formDetallesGenEq td {
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+    /*Documentos */   
+    #tituloDocs {
+        margin-top: 20px;
+        text-align: center;    
+    }   
+    
+    .docs {
+        list-style: none;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    
+    .docs a {
+        margin-left: 30px;
+    }
+
+aside, aside ul input {
+    background-color: saddlebrown;
+}
+
+aside {    
+    float: right;
+}
+       
+    aside ul input {        
+        color: #eee;
+    }

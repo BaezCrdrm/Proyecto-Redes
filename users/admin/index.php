@@ -27,11 +27,12 @@
         <link rel="stylesheet" href="../../CSS/General.css">
         <link rel="stylesheet" href="../../CSS/Admin.css">
         <link rel="stylesheet" href="../../CSS/FormAlta.css">
+        <link rel="stylesheet" href="../../CSS/MenuAccionesUsuarios.css">
     </head>
         
     <body>
         <header>
-            <h1 id="saludo">Hola admin</h1>
+            <h1 id="saludo" title="You talkin' to me'">Hola admin</h1>
             
             <a href="../../scripts/cerrarSesion.php">Cerrar sesión</a>
         </header>
