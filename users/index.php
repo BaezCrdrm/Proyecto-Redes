@@ -34,6 +34,11 @@
         <section id="content">
             <?php                
                 $ruta = "../areas/";
+                
+                if($dep!='001' && $dep!=null){ 
+                    include($ruta."encuentraDocs.php");
+                }
+                
                 switch ($dep) {
                     case '001':
                         include($ruta."Sistemas/Soporte/asignacionEquipos.php");
@@ -41,12 +46,45 @@
                         break;
                         
                     case '002':
-                        include($ruta."Finanzas/finanzas.php");
-                        main($val, $dep, $nombre);
+                        //include($ruta."Finanzas/finanzas.php");
+                        // include($ruta."encuentraDocs.php");
+                        main($val, $dep, $nombre, $ruta."Finanzas/");
                         break;
                         
                     case '003':
+                        main($val, $dep, $nombre, $ruta."Finanzas/");
+                        break;
                         
+                    case '004':
+                        main($val, $dep, $nombre, $ruta."Finanzas/");
+                        break;
+                        
+                    case '005':
+                        main($val, $dep, $nombre, $ruta."Finanzas/");
+                        break;
+                        
+                    case '006':
+                        main($val, $dep, $nombre, $ruta."Ventas/");
+                        break;
+                        
+                    case '007':
+                        main($val, $dep, $nombre, $ruta."Ventas/");
+                        break;
+                        
+                    case '008':
+                        main($val, $dep, $nombre, $ruta."Abastecimiento/");
+                        break;
+                        
+                    case '009':
+                        main($val, $dep, $nombre, $ruta."Abastecimiento/");
+                        break;
+                        
+                    case '010':
+                        main($val, $dep, $nombre, $ruta."Produccion/");
+                        break;
+                        
+                    case '011':
+                        main($val, $dep, $nombre, $ruta."Manufactura/");
                         break;
                     
                     default:
@@ -78,12 +116,12 @@
                                 include("../areas/Sistemas/Soporte/menuSoporte.html");
                                 break;
                                 
-                            case '002':
-                                include("../areas/Finanzas/Contabilidad/menuConta.html");
-                                break;
+                            // case '002':
+                            //     include("../areas/Finanzas/Contabilidad/menuConta.html");
+                            //     break;
                             
                             default:
-                                echo "";
+                                include("../plantillas/menuDocumentos.html");
                                 break;
                         }
                     ?>

@@ -36,7 +36,7 @@
         
         for ($i=0; $i < count($myArray); $i++) { 
             $file = explode("/", $myArray[$i]);
-            $cadena .= "<li class='docs'><a href='".$myArray[$i]."' target='_blank'>".$file[count($file) - 1]."</a></li>";
+            $cadena .= "<li onclick=\"muestraArchivo('".$myArray[$i]."')\" class='docs'><a href='#' target='_self'>".$file[count($file) - 1]."</a></li>";
         }
         
         $cadena .= "</ul>";
