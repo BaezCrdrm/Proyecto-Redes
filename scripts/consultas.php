@@ -95,4 +95,79 @@
             return $arreglo;
         }
     }
+    
+    function trabEsp($parte, $bool)
+    {
+        $query = "SELECT nombre";
+        $seleccion = "";
+        if ($bool == true) {
+            $query .= "Area ";
+            $seleccion = "areas";
+        }
+        else {
+            $query .= "Dep ";
+            $seleccion = "departamentos";
+        }
+        $query .= "FROM ".$seleccion." WHERE id='".$parte."';";
+        
+        $consulta = genQuery($query);
+        $reg = mysqli_fetch_array($consulta, MYSQLI_NUM);
+        return $reg[0];
+    }
+    
+    function asgnacionGenEquipos()
+    {
+        $query = "SELECT asignacionEquipos.idUsuario, asignacionEquipos.ip, equipos.marca, equipos.tipo FROM asignacionEquipos INNER JOIN equipos ON asignacionEquipos.idEquipo = equipos.id;";
+        $consulta = genQuery($query);
+        
+        $tabla = "<form id='formDetallesGenEq' action=''><table>
+            <th>ID usuario</th>
+            <th>Dirección IP</th>
+            <th>Marca equipo</th>
+            <th>Tipo de equipo</th>
+            <th></th>";
+        $i = 0;
+        while ($reg=mysqli_fetch_array($consulta, MYSQLI_NUM))
+        {
+            $tabla .= "<tr>
+                <td id='idU".$i."'>".$reg[0]."</td>
+                <td>".$reg[1]."</td>
+                <td>".$reg[2]."</td>
+                <td>".$reg[3]."</td>
+                <td><input type='submit' class='btnDetalles' value='Detalles' onclick=\"btnUsuarioEquipo(this, 'idU".$i."')\"/></td>
+            </tr>";
+        }
+        $tabla .= "</table></form>";
+        return $tabla;
+    }
+    
+    function leeEquipos($id=null)
+    {
+        $query = "SELECT ";
+        if ($id==null) {
+            $query .= " * from equipos";
+        }
+        else {
+            $query .= "equipos.id, equipos.tipo, equipos.descripcion FROM equipos INNER JOIN asignacionEquipos WHERE NOT asignacionEquipos.idEquipo=equipos.id;";
+        }
+        
+        $consulta = genQuery($query);
+        
+        $arreglo = array();
+        $i = 0;
+        if ($id == null) {
+            # code...
+        }
+        else {
+            while ($reg=mysqli_fetch_array($consulta, MYSQLI_NUM))
+            {
+                $arreglo[$i][0] = $reg[0];
+                $arreglo[$i][1] = $reg[1];
+                $arreglo[$i][2] = $reg[2];
+                $i++;
+            }
+        }
+        
+        return $arreglo;
+    }
 ?>

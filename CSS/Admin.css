@@ -25,39 +25,23 @@ header, footer {
     header a, header a:visited {
         color:white;
     }
-
-aside {
-    width: 20%;
-    height: 500px;
     
-    float: left;
-    
-    background-color: lightgray; 
+aside, aside ul input {
+    background-color: lightgray; ;
 }
 
-    aside > * {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+aside {
+    height: 500px;    
+    float: left;    
+}
 
     aside h2 {
         margin-top:10px;
         text-align: center;
     }
-
-    aside ul {
-        list-style: none;
-    }
     
     aside ul input {
-        width: auto;
-        background-color: lightgray;
         color: #666;
-        border: none;
-    }
-    
-    aside ul input:hover {
-        opacity: 0.5;
     }
 
 #content {
@@ -69,41 +53,6 @@ aside {
     
     overflow: scroll;
 }
-
-    /*Registro usuario*/
-    /*#tituloFormReg {
-        margin-top: 30px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    #formAlta {
-        width: 350px;
-        margin: auto;
-    }
-    
-        #formAlta h3 {
-            margin-top: 8px;
-            margin-bottom: 3px;
-        }
-    
-        #area li{
-            width: 150px;
-            display: inline-block;
-        }
-            #area li select {
-                width: 100%;
-            }
-            
-        #mail li {
-            display: inline;
-        }
-
-        .inpDatosB {
-            width: 170px;
-            margin-top: 3px;
-        }*/
-        
     /*Tabla detalles de usuario*/
     #tituloUsuarios {
         margin-top: 30px;

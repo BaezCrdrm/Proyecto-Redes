@@ -9,7 +9,7 @@
     $id = $direccion."@".$subd;
     $pass = $_POST["password"];
     
-    $query = "INSERT INTO usuarios (id, nombre, apellidos, fechaNac) values ('".$id."', '".$nombre."', '".$apellidos."', '".$fecha."'); "; 
+    $query = "INSERT INTO usuarios (id, nombre, apellidos, fechaNac) values ('".$id."', '".strtoupper($nombre)."', '".strtoupper($apellidos)."', '".$fecha."'); "; 
     
     $myBool = true;
     require "consultas.php";

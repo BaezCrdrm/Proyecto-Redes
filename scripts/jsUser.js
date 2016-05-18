@@ -24,3 +24,22 @@ function btnUsEsp(inp, id)
     
     document.getElementById("hiddenCuenta").value = document.getElementById(id).innerHTML;
 }
+
+function muestraArchivo(valor)
+{
+    limpia("content");
+    var padre = document.getElementById("content");
+    var em = document.createElement("embed");
+    em.id = "documento";
+    em.src = valor;
+    em.height = padre.offsetHeight;
+    padre.appendChild(em);
+}
+
+function limpia(area)
+{
+    var padre = document.getElementById(area);
+    while (padre.hasChildNodes()) {
+        padre.removeChild(padre.lastChild);
+    }
+}
