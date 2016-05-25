@@ -18,7 +18,7 @@
         //Admin
         if ($usuario == "admin@caoba.com" && sha1($pass) == $reg[1]) {
             $direccion .= "admin";
-        }
+        } 
         else { //Mortal
             $_SESSION['id'] = $usuario;
             $_SESSION['userLastName'] = $user[2];
@@ -34,7 +34,7 @@
     }
     else {
         echo "<script>
-                alert('No seas farol');
+                alert('Hubo un problema al solicitar el acceso con este usuario.');
                 window.history.back();
             </script>";
     }
