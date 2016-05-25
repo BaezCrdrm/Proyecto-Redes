@@ -9,7 +9,7 @@
     
     function muestraUsuarios()
     {
-        $query = "SELECT usuarios.id, usuarios.nombre, usuarios.apellidos, areas.nombreArea, departamentos.nombreDep FROM trabDeps INNER JOIN usuarios ON trabDeps.idTrab = usuarios.id INNER JOIN areas ON trabDeps.idArea=areas.id INNER JOIN departamentos ON trabDeps.idDep = departamentos.id;";
+        $query = "SELECT usuarios.id, usuarios.nombre, usuarios.apellidos, areas.nombreArea, departamentos.nombreDep FROM trabdeps INNER JOIN usuarios ON trabdeps.idTrab = usuarios.id INNER JOIN areas ON trabdeps.idArea=areas.id INNER JOIN departamentos ON trabdeps.idDep = departamentos.id;";
         
         $consulta = genQuery($query);
         $tabla = "<form action='../../users/detalles/' method='post'><table id='detalles'>
